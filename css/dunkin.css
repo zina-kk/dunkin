@@ -1,0 +1,477 @@
+@charset "utf-8";
+
+*{
+    margin: 0; border: 0; box-sizing: border-box;
+}
+a {
+    text-decoration: none; color: black;
+}
+html body {
+    font-family: "debussy"; 
+}
+#layout {
+    position: relative;
+}
+
+h2 {
+    color: #f5690c;
+    letter-spacing: 1px;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.hp {
+    font-size: 1.2rem;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+
+/* 해더 */
+header{
+    height: 80px; display: flex; 
+    position: relative; /* position: fixed; */ z-index: 2; margin: auto;
+    background: url('../images/background.jpg');  display: block;
+    box-shadow: 0 -5px 15px rgba(0,0,0,  0.3) inset; 
+}
+header h1 {display: none;}
+header ul {
+    display: flex; list-style: none; 
+    z-index: 1; align-items: center; 
+    justify-content: center; 
+}
+header li {
+    position: relative;
+}
+
+
+/* 던킨 로고 */
+#logo {
+    background: #fd7822;
+    padding: 13px 50px 25px 55px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 1.8rem; color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    margin: 10px 15px 0 15px;
+    display: block; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    
+}
+#logo b {
+    transform: translateY(8px);
+    display: block;
+}
+
+/* 메뉴 */
+.mainMenu {
+    margin: 0 35px;
+}
+
+.subMenu {
+    display: flex; display: none;
+    position: absolute; top: 70px; 
+}
+
+#brand {left: 37px; width: 400px;}
+#menu  {left: 35px; width: 500px;}
+#event {width: 200px; left: -52px;}
+#order {width: 250px; left: -130px;}
+
+.subMenu a {
+    padding-right:20px;
+    font-family: 'hygothic';
+    font-size: 0.9rem;
+    font-weight: bold; 
+}
+
+#bg {height: 60px; background: rgba(255, 255, 255, 0.95); 
+    position: absolute; z-index: 1; display: none; width: 100%;
+}
+
+.mainMenu:hover{ color: #c43663;}
+.subMenu a:hover{color: #c43663;}
+
+
+
+/* 토글스위치 */
+#tog label {
+    width: 100px; height: 30px; 
+    background-color: #c43663; 
+    display: block; position: relative; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    box-shadow: inset 1px 1px 5px rgba(0,0,0, 0.3); 
+}
+#tog label.act {background-color:#fd7822;}
+#tog input {opacity: 0;}
+#tog span { position: absolute;
+    right: 10px; top: 3px; color: white; font-weight: 1000; 
+    font-size: 0.95rem;} /* 창업문의 */
+#tog label.act span {right: auto; left: 10px; 
+    top: 6px; color: white; font-weight: normal;
+    font-size: 1rem; }/* brand */
+#tog b {
+    width: 20px; height: 20px; 
+    display: block; 
+    border-radius: 50%; 
+    background: white; position: absolute; 
+    top: 5px; left: 5px; transition: 0.3s;
+}
+#tog input:checked + b { left:75px;}
+
+
+
+/* 메인 배너 */
+#mainBanner {
+    background: #f3f2f2;
+    position: relative;
+    padding: 50px 70px;
+    text-align: center;
+}
+#banner{
+    position: relative;
+    width: 100%;
+    max-width: 1550px;
+    display: inline-block;
+    border-radius: 80px;
+    overflow: hidden;
+    padding: 12px;
+    background: radial-gradient(circle, #dc4900 40%, #fd7822 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+#banner img{
+    display: block;
+    height: auto;
+    width: 100%;
+    border-radius: 70px;   
+}
+
+/* 메인배너의 아이콘 */
+#ad{
+    position: absolute;
+    max-width: 500px;
+    max-height: 800px;
+    top: 50%;
+    right: 12%;
+    transform: translateY(-50%);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;  
+}
+
+/* 반응형 */
+@media(max-width:1800px){
+    #ad{display:flex; right: 8%;}
+}
+@media(max-width:1374px){
+    #dun h2 {font-size: 0.8rem;}
+}
+@media(max-width:1076px){
+    #coolatta p {font-size: 0.9rem;}
+}
+@media(max-width:1002px){
+    #coolatta p {font-size: 0.75rem;}
+}
+
+@media(max-width:1070px){
+    #ad{display:flex; right: 10%; max-height: 80%; gap: 5px;} 
+}
+@media(max-width:890px){
+    #ad{display:flex; right: 13%;}
+    #fine p, #fine h3 {display: none;}
+    #coolatta p {display: none;}
+    #coolatta img {margin: auto; max-width: 70%!important;}
+    #dun h2 {font-size: 0.6rem;}
+
+}
+
+/* FINE */
+#fine {
+    background: #faf7c2;
+    border-radius: 40px;
+
+}
+#fine img{
+    max-width: 70%;
+}
+#fine h3{
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color:#8fda52 ;
+}
+
+#fine p {
+    padding-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* coolatta */
+#coolatta{
+    display: flex;
+    background: #337d3e;
+    border-radius: 20px ;
+    align-items: center;
+    padding: 15px;
+}
+#coolatta img {
+    max-width: 80%;
+    display: block; justify-self: end;
+}
+#coolatta p{
+    color: white; font-weight: bold;
+    margin: 0;
+    width: 1000px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+/* DUNKIN' */
+#dun {
+    background: #c43663;
+    border-radius: 50px;
+}
+#dun h2{
+    color: white;
+    padding: 10px 0;
+    letter-spacing: 1px;
+}
+
+
+/* 슬라이드 */
+
+#slideArea {
+  background: #faf4f4;
+  padding: 70px 0;
+}
+
+#slideWrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#slide {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+#slide a {
+  position: relative;
+  flex: 0 0 70%;
+  margin: 0 10px;
+  overflow: hidden; /* 중요! */
+  border-radius: 30px;
+  transition: opacity 0.5s ease ;
+}
+
+#slide a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease ;
+}
+
+
+#slide a.active {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+#slide a:not(.active) {
+  opacity: 0.5;
+  z-index: 0;
+  transform: scale(0.7);
+}
+
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #f5690c;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+#prev { left: 70px; }
+#next { right: 70px; }
+
+#prev:hover , #next:hover {color: #337d3e;}
+
+#dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#dots span.active {
+  background: #f5690c;
+}
+
+@media (max-width: 768px) {
+  #slide a {
+    flex: 0 0 80%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+    padding: 70px 0;
+}
+main div{
+    display: flex;
+}
+main div a {
+    text-align: center; margin: auto;
+    width:fit-content ; background: #faf4f4;
+    display: block; margin :0 10px; border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(138, 138, 138, 0.5);
+}
+main div a:first-child {
+    margin-left: 30px;
+}
+main div a:last-child {
+    margin-right: 30px;
+}
+main div a p {
+    padding: 10px ; 
+    font-size: 120%;
+}
+
+#donut {
+    background: rgb(252, 186, 64);
+}
+#food {
+    background: papayawhip;
+}
+#coffee {
+    background: papayawhip;
+}
+#beverage{
+    background: papayawhip;
+}
+#snack {
+    background: papayawhip;
+}
+
+main div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: 0.5s;
+}
+main div img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#with {
+    background: #faf4f4;
+    padding: 70px 0;
+}
+#with div {
+    display: flex; 
+    justify-content: center;
+    /* flex-wrap: wrap; 나중에 반응형에서 사용해볼 것 */
+}
+#with div a {
+    text-align: center; margin: auto;
+    background: white;
+    display: block; margin :0 10px; border-radius: 28px; 
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(138, 138, 138, 0.5);
+    max-width: 95%;
+}
+.img-wrap {
+  width: 100%;
+  overflow: hidden; 
+  border-radius: 20px;
+}
+
+#with div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* ✅ 비율 유지하며 꽉 채움 */
+    display: block;
+    transition: 0.5s;
+} 
+
+#with div img:hover {
+    transform: scale(1.1);
+}
+#with div p {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#with div p b {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
